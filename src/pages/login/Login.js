@@ -20,7 +20,7 @@ import logo from "./logo.svg";
 import google from "../../images/google.svg";
 
 // context
-import { useUserDispatch, loginUser } from "../../context/UserContext";
+import { useUserDispatch, loginUser, joinUser } from "../../context/UserContext";
 
 function Login(props) {
   var classes = useStyles();
@@ -31,10 +31,11 @@ function Login(props) {
   // local
   var [isLoading, setIsLoading] = useState(false);
   var [error, setError] = useState(null);
+  var [errorMessage, setErrorMessage] = useState("회원 정보를 찾을 수 없습니다. 다시 시도해주세요.");
   var [activeTabId, setActiveTabId] = useState(0);
   var [nameValue, setNameValue] = useState("");
-  var [loginValue, setLoginValue] = useState("admin@flatlogic.com");
-  var [passwordValue, setPasswordValue] = useState("password");
+  var [loginValue, setLoginValue] = useState("");
+  var [passwordValue, setPasswordValue] = useState("");
 
   return (
     <Grid container className={classes.container}>
@@ -56,10 +57,7 @@ function Login(props) {
           </Tabs>
           {activeTabId === 0 && (
             <React.Fragment>
-              <Typography variant="h1" className={classes.greeting}>
-                안녕하세요
-              </Typography>
-              <Button size="large" className={classes.googleButton}>
+              {/* <Button size="large" className={classes.googleButton}>
                 <img src={google} alt="google" className={classes.googleIcon} />
                 &nbsp;Sign in with Google
               </Button>
@@ -67,10 +65,10 @@ function Login(props) {
                 <div className={classes.formDivider} />
                 <Typography className={classes.formDividerWord}>or</Typography>
                 <div className={classes.formDivider} />
-              </div>
+              </div> */}
               <Fade in={error}>
                 <Typography color="secondary" className={classes.errorMessage}>
-                  Something is wrong with your login or password :(
+                  {errorMessage}
                 </Typography>
               </Fade>
               <TextField
@@ -84,7 +82,7 @@ function Login(props) {
                 value={loginValue}
                 onChange={e => setLoginValue(e.target.value)}
                 margin="normal"
-                placeholder="Email Adress"
+                placeholder="이메일"
                 type="email"
                 fullWidth
               />
@@ -99,7 +97,7 @@ function Login(props) {
                 value={passwordValue}
                 onChange={e => setPasswordValue(e.target.value)}
                 margin="normal"
-                placeholder="Password"
+                placeholder="비밀번호"
                 type="password"
                 fullWidth
               />
@@ -119,6 +117,7 @@ function Login(props) {
                         props.history,
                         setIsLoading,
                         setError,
+                        setErrorMessage,
                       )
                     }
                     variant="contained"
@@ -140,15 +139,9 @@ function Login(props) {
           )}
           {activeTabId === 1 && (
             <React.Fragment>
-              <Typography variant="h1" className={classes.greeting}>
-                환영합니다!
-              </Typography>
-              <Typography variant="h2" className={classes.subGreeting}>
-                새 계정을 만들어보세요.
-              </Typography>
               <Fade in={error}>
                 <Typography color="secondary" className={classes.errorMessage}>
-                  Something is wrong with your login or password :(
+                  {errorMessage}
                 </Typography>
               </Fade>
               <TextField
@@ -202,13 +195,14 @@ function Login(props) {
                 ) : (
                   <Button
                     onClick={() =>
-                      loginUser(
-                        userDispatch,
+                      joinUser(
+                        nameValue,
                         loginValue,
                         passwordValue,
-                        props.history,
+                        setActiveTabId,
                         setIsLoading,
                         setError,
+                        setErrorMessage,
                       )
                     }
                     disabled={
@@ -226,12 +220,12 @@ function Login(props) {
                   </Button>
                 )}
               </div>
-              <div className={classes.formDividerContainer}>
+              {/* <div className={classes.formDividerContainer}>
                 <div className={classes.formDivider} />
                 <Typography className={classes.formDividerWord}>or</Typography>
                 <div className={classes.formDivider} />
-              </div>
-              <Button
+              </div> */}
+              {/* <Button
                 size="large"
                 className={classnames(
                   classes.googleButton,
@@ -240,7 +234,7 @@ function Login(props) {
               >
                 <img src={google} alt="google" className={classes.googleIcon} />
                 &nbsp;Sign in with Google
-              </Button>
+              </Button> */}
             </React.Fragment>
           )}
         </div>

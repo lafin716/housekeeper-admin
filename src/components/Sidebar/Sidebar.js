@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Drawer, IconButton, List } from "@material-ui/core";
 import {
   Home as HomeIcon,
+  Dashboard as DashboardIcon,
   NotificationsNone as NotificationsIcon,
-  FormatSize as TypographyIcon,
   FilterNone as UIElementsIcon,
   BorderAll as TableIcon,
   QuestionAnswer as SupportIcon,
@@ -30,12 +30,12 @@ import {
 } from "../../context/LayoutContext";
 
 const structure = [
-  { id: 0, label: "대시보드", link: "/app/dashboard", icon: <HomeIcon /> },
+  { id: 0, label: "대시보드", link: "/app/dashboard", icon: <DashboardIcon /> },
   {
     id: 1,
-    label: "글꼴",
-    link: "/app/typography",
-    icon: <TypographyIcon />,
+    label: "하우스관리",
+    link: "/app/house",
+    icon: <HomeIcon />,
   },
   { id: 2, label: "표", link: "/app/tables", icon: <TableIcon /> },
   {

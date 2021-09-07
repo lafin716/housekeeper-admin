@@ -25,6 +25,7 @@ import Sidebar from "../Sidebar";
 
 // pages
 import Dashboard from "../../pages/dashboard";
+import House from "../../pages/house";
 import Typography from "../../pages/typography";
 import Notifications from "../../pages/notifications";
 import Maps from "../../pages/maps";
@@ -35,11 +36,12 @@ import Charts from "../../pages/charts";
 // context
 import { useLayoutState } from "../../context/LayoutContext";
 
+
 function Layout(props) {
   var classes = useStyles();
 
   // global
-  var layoutState = useLayoutState();
+  var layoutState = useLayoutState(); 
 
   return (
     <div className={classes.root}>
@@ -54,6 +56,7 @@ function Layout(props) {
             <div className={classes.fakeToolbar} />
             <Switch>
               <Route path="/app/dashboard" component={Dashboard} />
+              <Route path="/app/house" component={House} />
               <Route path="/app/typography" component={Typography} />
               <Route path="/app/tables" component={Tables} />
               <Route path="/app/notifications" component={Notifications} />
@@ -125,7 +128,7 @@ function Layout(props) {
                   </IconButton>
                 </Link>
                 <Link
-                  href={'https://github.com/flatlogic'}
+                  href={'https://github.com/lafin716'}
                   target={'_blank'}
                 >
                   <IconButton

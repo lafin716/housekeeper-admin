@@ -51,7 +51,7 @@ export default function Dashboard(props) {
 
   return (
     <>
-      <PageTitle title="Dashboard" button={<Button
+      <PageTitle title="대시보드" button={<Button
       variant="contained"
       size="medium"
       color="secondary"
