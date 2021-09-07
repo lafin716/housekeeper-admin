@@ -141,10 +141,10 @@ function Login(props) {
           {activeTabId === 1 && (
             <React.Fragment>
               <Typography variant="h1" className={classes.greeting}>
-                Welcome!
+                환영합니다!
               </Typography>
               <Typography variant="h2" className={classes.subGreeting}>
-                Create your account
+                새 계정을 만들어보세요.
               </Typography>
               <Fade in={error}>
                 <Typography color="secondary" className={classes.errorMessage}>
@@ -162,7 +162,7 @@ function Login(props) {
                 value={nameValue}
                 onChange={e => setNameValue(e.target.value)}
                 margin="normal"
-                placeholder="Full Name"
+                placeholder="이름"
                 type="text"
                 fullWidth
               />
@@ -177,7 +177,7 @@ function Login(props) {
                 value={loginValue}
                 onChange={e => setLoginValue(e.target.value)}
                 margin="normal"
-                placeholder="Email Adress"
+                placeholder="이메일"
                 type="email"
                 fullWidth
               />
@@ -192,7 +192,7 @@ function Login(props) {
                 value={passwordValue}
                 onChange={e => setPasswordValue(e.target.value)}
                 margin="normal"
-                placeholder="Password"
+                placeholder="비밀번호"
                 type="password"
                 fullWidth
               />

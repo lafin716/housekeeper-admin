@@ -30,29 +30,29 @@ import {
 } from "../../context/LayoutContext";
 
 const structure = [
-  { id: 0, label: "Dashboard", link: "/app/dashboard", icon: <HomeIcon /> },
+  { id: 0, label: "대시보드", link: "/app/dashboard", icon: <HomeIcon /> },
   {
     id: 1,
-    label: "Typography",
+    label: "글꼴",
     link: "/app/typography",
     icon: <TypographyIcon />,
   },
-  { id: 2, label: "Tables", link: "/app/tables", icon: <TableIcon /> },
+  { id: 2, label: "표", link: "/app/tables", icon: <TableIcon /> },
   {
     id: 3,
-    label: "Notifications",
+    label: "알림",
     link: "/app/notifications",
     icon: <NotificationsIcon />,
   },
   {
     id: 4,
-    label: "UI Elements",
+    label: "UI 요소",
     link: "/app/ui",
     icon: <UIElementsIcon />,
     children: [
-      { label: "Icons", link: "/app/ui/icons" },
-      { label: "Charts", link: "/app/ui/charts" },
-      { label: "Maps", link: "/app/ui/maps" },
+      { label: "아이콘", link: "/app/ui/icons" },
+      { label: "차트", link: "/app/ui/charts" },
+      { label: "지도", link: "/app/ui/maps" },
     ],
   },
   { id: 5, type: "divider" },
