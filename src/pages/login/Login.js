@@ -40,7 +40,7 @@ function Login(props) {
     <Grid container className={classes.container}>
       <div className={classes.logotypeContainer}>
         <img src={logo} alt="logo" className={classes.logotypeImage} />
-        <Typography className={classes.logotypeText}>Material Admin</Typography>
+        <Typography className={classes.logotypeText}>HouseKeeper</Typography>
       </div>
       <div className={classes.formContainer}>
         <div className={classes.form}>
@@ -51,13 +51,13 @@ function Login(props) {
             textColor="primary"
             centered
           >
-            <Tab label="Login" classes={{ root: classes.tab }} />
-            <Tab label="New User" classes={{ root: classes.tab }} />
+            <Tab label="로그인" classes={{ root: classes.tab }} />
+            <Tab label="회원가입" classes={{ root: classes.tab }} />
           </Tabs>
           {activeTabId === 0 && (
             <React.Fragment>
               <Typography variant="h1" className={classes.greeting}>
-                Good Morning, User
+                안녕하세요
               </Typography>
               <Button size="large" className={classes.googleButton}>
                 <img src={google} alt="google" className={classes.googleIcon} />
@@ -125,7 +125,7 @@ function Login(props) {
                     color="primary"
                     size="large"
                   >
-                    Login
+                    로그인
                   </Button>
                 )}
                 <Button
@@ -133,7 +133,7 @@ function Login(props) {
                   size="large"
                   className={classes.forgetButton}
                 >
-                  Forget Password
+                  비밀번호 찾기
                 </Button>
               </div>
             </React.Fragment>
@@ -222,7 +222,7 @@ function Login(props) {
                     fullWidth
                     className={classes.createAccountButton}
                   >
-                    Create your account
+                    회원가입
                   </Button>
                 )}
               </div>
