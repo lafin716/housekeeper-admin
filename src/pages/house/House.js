@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { getHouseList } from '../../context/HouseKeeperContext';
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
@@ -39,7 +39,10 @@ const useStyles = makeStyles(theme => ({
   }))
   
 export default function House() {
-    var data = getHouseList();
+
+    var houses = getHouseList();
+    console.log(houses);
+    
     const classes = useStyles();
     return (
         <>

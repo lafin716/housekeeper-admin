@@ -17,9 +17,10 @@ const apiClient = axios.create({
 });
 
 // 하우스 리스트 조회
-function getHouseList() {
-    apiClient.get(PATH_HOUSE_LIST)
-    .then(response => console.log(response));
+async function getHouseList() {
+    let response = await apiClient.get(PATH_HOUSE_LIST);
+
+    return response;
 }
 
 export { getHouseList };
